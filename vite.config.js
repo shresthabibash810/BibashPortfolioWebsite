@@ -8,6 +8,7 @@ export default defineConfig({
     react(),
     visualizer({ open: true }) // Generates dist/stats.html bundle report
   ],
+  base: process.env.VITE_BASE_PATH || '/BibashPortfolioWebsite',
   build: {
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
