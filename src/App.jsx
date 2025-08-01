@@ -12,15 +12,18 @@ import WelcomeScreen from "./Pages/WelcomeScreen";
 import { AnimatePresence } from 'framer-motion';
 import PropTypes from 'prop-types';
 
+// Main Landing Page with Welcome Screen
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
     <>
+      {/* Welcome Screen with Animation */}
       <AnimatePresence mode="wait">
         {showWelcome && (
           <WelcomeScreen onLoadingComplete={() => setShowWelcome(false)} />
         )}
       </AnimatePresence>
 
+      {/* Main Content (shown after welcome) */}
       {!showWelcome && (
         <>
           <Navbar />
@@ -29,6 +32,8 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
           <About />
           <Portofolio />
           <ContactPage />
+
+          {/* Footer */}
           <footer>
             <center>
               <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />
@@ -52,6 +57,7 @@ LandingPage.propTypes = {
   setShowWelcome: PropTypes.func.isRequired,
 };
 
+// Project Detail Page Layout
 const ProjectPageLayout = () => (
   <>
     <ProjectDetails />
@@ -59,9 +65,9 @@ const ProjectPageLayout = () => (
       <center>
         <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />
         <span className="block text-sm pb-4 text-gray-500 text-center dark:text-gray-400">
-          © 2023{" "}
+          © 2025{" "}
           <a href="https://flowbite.com/" className="hover:underline">
-            EkiZR™
+            Bibash Shrestha™
           </a>
           . All Rights Reserved.
         </span>
@@ -70,6 +76,7 @@ const ProjectPageLayout = () => (
   </>
 );
 
+// Main App Component
 function App() {
   const [showWelcome, setShowWelcome] = useState(true);
 
