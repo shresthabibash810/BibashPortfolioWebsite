@@ -278,7 +278,7 @@ const userProjects = [
     Description: "This project was given as assignment in our first semester of BSc.(Hons) Computing degree. Object-oriented programming project implementing a comprehensive bank management system.",
     Link: null,
     Github: "https://github.com/shresthabibash810/Bank-Management-System.git",
-    Img: "/Coding.gif",
+    Img: "/Bank.png",
     TechStack: ["C++", "Object-Oriented Programming", "File Handling", "Data Structures"],
     Features: [
       "Account Management",
@@ -385,7 +385,7 @@ export default function FullWidthTabs() {
     { Img: "Deloitte.jpg" },
     { Img: "Digital Marketing.jpg" },
     { Img: "MERN.jpg" },
-    { Img: "Mindrisers.jpg" },
+    { Img: "Mindrisers.png" },
     { Img: "TATA.jpg" }
   ];
 
