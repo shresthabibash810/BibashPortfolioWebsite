@@ -1,0 +1,4 @@
+<!-- public/grid.svg -->
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 0 10 L 40 10 M 0 20 L 40 20 M 0 30 L 40 30 M 10 0 L 10 40 M 20 0 L 20 40 M 30 0 L 30 40" stroke="#333" stroke-width="0.5" opacity="0.1" />
+</svg>

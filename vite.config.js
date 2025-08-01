@@ -1,8 +1,13 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+// vite.config.js
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    visualizer({ open: true }) // Generates dist/stats.html bundle report
+  ],
   build: {
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
@@ -10,9 +15,11 @@ export default defineConfig({
         manualChunks: {
           react: ['react', 'react-dom'],
           router: ['react-router-dom'],
-          icons: ['lucide-react'],
-        },
-      },
-    },
-  },
-})
+          motion: ['framer-motion'],
+          aos: ['aos'],
+          propTypes: ['prop-types']
+        }
+      }
+    }
+  }
+});

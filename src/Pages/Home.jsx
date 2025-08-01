@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, memo } from "react";
+import React, { useState, useEffect, useCallback, memo } from "react";
 import {
   Github,
   Linkedin,
@@ -52,17 +52,12 @@ const MainTitle = memo(() => (
 ));
 MainTitle.displayName = "MainTitle";
 
-import PropTypes from "prop-types";
-
 const TechStack = memo(({ tech }) => (
   <div className="px-4 py-2 hidden sm:block rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-sm text-gray-300 hover:bg-white/10 transition-colors">
     {tech}
   </div>
 ));
 TechStack.displayName = "TechStack";
-TechStack.propTypes = {
-  tech: PropTypes.string.isRequired,
-};
 
 const CTAButton = memo(({ href, text, icon: Icon }) => (
   <a href={href}>
@@ -87,11 +82,6 @@ const CTAButton = memo(({ href, text, icon: Icon }) => (
   </a>
 ));
 CTAButton.displayName = "CTAButton";
-CTAButton.propTypes = {
-  href: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  icon: PropTypes.elementType.isRequired,
-};
 
 const SocialLink = memo(({ icon: Icon, link }) => (
   <a href={link} target="_blank" rel="noopener noreferrer">
@@ -104,10 +94,6 @@ const SocialLink = memo(({ icon: Icon, link }) => (
   </a>
 ));
 SocialLink.displayName = "SocialLink";
-SocialLink.propTypes = {
-  icon: PropTypes.elementType.isRequired,
-  link: PropTypes.string.isRequired,
-};
 
 // Constants
 const TYPING_SPEED = 100;
@@ -151,7 +137,6 @@ const Home = () => {
         offset: 10,
       });
     };
-
     initAOS();
     window.addEventListener("resize", initAOS);
     return () => window.removeEventListener("resize", initAOS);
@@ -225,7 +210,6 @@ const Home = () => {
               <div className="space-y-4 sm:space-y-6">
                 <StatusBadge />
                 <MainTitle />
-
                 {/* Typing Effect */}
                 <div
                   className="h-8 flex items-center"
@@ -237,7 +221,6 @@ const Home = () => {
                   </span>
                   <span className="w-[3px] h-6 bg-gradient-to-t from-[#6366f1] to-[#a855f7] ml-1 animate-blink"></span>
                 </div>
-
                 {/* Description */}
                 <p
                   className="text-base md:text-lg text-gray-400 max-w-xl leading-relaxed font-light"
@@ -246,7 +229,6 @@ const Home = () => {
                 >
                   Hi, I&apos;m <span className="font-semibold text-white">Bibash Shrestha</span>, a passionate Full Stack Developer specializing in PHP, Oracle Apex, Python, and modern web technologies. I love building scalable, efficient, and innovative solutions for the digital world.
                 </p>
-
                 {/* Tech Stack */}
                 <div
                   className="flex flex-wrap gap-3 justify-start"
@@ -257,7 +239,6 @@ const Home = () => {
                     <TechStack key={index} tech={tech} />
                   ))}
                 </div>
-
                 {/* CTA Buttons */}
                 <div
                   className="flex flex-row gap-3 w-full justify-start"
@@ -265,13 +246,12 @@ const Home = () => {
                   data-aos-delay="1400"
                 >
                   <CTAButton
-                    href="#Portofolio"
+                    href="#Portfolio"
                     text="Projects"
                     icon={ExternalLink}
                   />
                   <CTAButton href="#Contact" text="Contact" icon={Mail} />
                 </div>
-
                 {/* Social Links */}
                 <div
                   className="hidden sm:flex gap-4 justify-start"
@@ -284,7 +264,6 @@ const Home = () => {
                 </div>
               </div>
             </div>
-
             {/* Right Column - Optimized Lottie Animation */}
             <div
               className="w-full py-[10%] sm:py-0 lg:w-1/2 h-auto lg:h-[600px] xl:h-[750px] relative flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0"
@@ -299,7 +278,6 @@ const Home = () => {
                     isHovering ? "opacity-50 scale-105" : "opacity-20 scale-100"
                   }`}
                 ></div>
-
                 <div
                   className={`relative z-10 w-full opacity-90 transform transition-transform duration-500 ${
                     isHovering ? "scale-105" : "scale-100"
@@ -307,7 +285,6 @@ const Home = () => {
                 >
                   <DotLottieReact {...lottieOptions} />
                 </div>
-
                 <div
                   className={`absolute inset-0 pointer-events-none transition-all duration-700 ${
                     isHovering ? "opacity-50" : "opacity-20"
