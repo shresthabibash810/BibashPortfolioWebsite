@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/portfolio.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 
     <!-- Google Site Verification (Optional: Replace with your actual verification code if needed) -->
     <!-- <meta name="google-site-verification" content="your-verification-code-here" /> -->
@@ -49,11 +49,23 @@
     <!-- Preload critical assets -->
     <link rel="preload" as="image" href="/portfolio.png" />
     <link rel="preload" as="font" href="/fonts/Inter.woff2" type="font/woff2" crossorigin />
+    <!-- Preconnect and DNS prefetch for external resources used in Home.jsx -->
+    <link rel="preconnect" href="https://lottie.host" crossorigin>
+    <link rel="dns-prefetch" href="https://lottie.host">
 
-    <title>Bibash Shrestha </title>
+    <title>Bibash Shrestha - Full Stack Developer Portfolio</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <noscript>You need to enable JavaScript to run this app. Please check your browser settings.</noscript>
+    <script type="module" src="/src/main.jsx">
+      // Fallback if module fails to load
+      document.addEventListener('DOMContentLoaded', () => {
+        if (!document.getElementById('root').hasChildNodes()) {
+          console.warn('main.jsx failed to load. Check file path or build process.');
+          document.getElementById('root').innerHTML = '<p class="fallback-text">App failed to load. Please ensure JavaScript is enabled and try refreshing.</p>';
+        }
+      });
+    </script>
   </body>
 </html>
