@@ -386,7 +386,8 @@ export default function FullWidthTabs() {
     { Img: "Digital Marketing.jpg" },
     { Img: "MERN.jpg" },
     { Img: "Mindrisers.png" },
-    { Img: "TATA.jpg" }
+    { Img: "TATA.jpg" },
+    { Img: "Datacamp.jpg" }
   ];
 
   const finalCertificates = certificates.length > 0 ? certificates : localCertificates;
